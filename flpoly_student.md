@@ -1,27 +1,27 @@
-## Student Name (or name you would preferred to be called)
+##Milous Loche
 
 ### Spring 2023
 
 DSBA student at [Florida Polytechnic University](https://www.floridapoly.edu) currently enrolled in: 
 
-- Course
+- Introduction to Data Science
 
-- Course 2
+- Database 1
 
-- Course 3
+- Principles of Microeconomics
 
-- Course 4
+- Calculus 2
 
 **Hobbies:**
 
 I am _passionate about_: 
 
-- Thing 1
+- Martial Arts
 
-- Thing 2
+- Reading
 
-- Thing 3 as shown in this website <https://www.floridapoly.edu>
+- Working out
 
 ***
 
-> Last modified: YYYY/MM/DD
+> Last modified: 2023/01/17
