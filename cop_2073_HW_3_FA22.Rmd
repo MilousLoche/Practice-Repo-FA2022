@@ -1,0 +1,215 @@
+---
+title: "Introduction to Data Science - HW 3"
+author: "Milous Loche - `mloche1355@floridapoly.edu`"
+output: html_notebook
+---
+
+
+# Problem 1 (20 Points)
+
+Create the following vectors in `R` (see the pattern and use appropriate functions to construct these vectors):
+
+$a = (5, 10, 15, 20, ..., 160)$
+
+$b = (87, 86, 85, ..., 56)$
+
+(a) (5 points) Multiply these vectors and call the result `d`.
+
+
+```{r}
+# Solution for 1A:
+a <- seq(5,160,5)
+b <- seq(87,56,-1)
+d <- a * b
+print(d)
+
+
+```
+
+(b) (5 points) What are the 19th, 20th, and 21st elements of `d`?
+
+```{r}
+# Solution for 1B:
+
+d[19]
+d[20]
+d[21]
+```
+
+(c) (5 points) What are all of the elements of `d` which are less than 2000?
+
+```{r}
+# Solution for 1C:
+c <- d < 2000
+final <- d[c]
+print(final)
+
+```
+
+
+(d) (5 points) How many elements of `d` are greater than 6000?
+
+```{r}
+# Solution for 1D:
+e <- d > 6000
+final2 <- d[e]
+print(final2)
+
+```
+
+
+# Problem 2 (20 Points)
+
+Start with this vector of `nouns`.  
+
+```{r}
+nouns <- c("apple", "flower", "insect", "lettuce", "knife", "dog", "cloud", "person", "cabinet", "flower" )
+```
+
+(a) (5 points) Use the `length()` function to display the number of elements in `nouns`.
+
+```{r}
+# Solution for 2A:
+print(length(nouns))
+
+```
+
+(b) (5 points) Use indexing to create a new vector consisting of the first 4 elements of `nouns`.
+
+```{r}
+# Solution for 2B:
+newNouns <- nouns[c(1:4)]
+print(newNouns)
+
+```
+
+(c) (5 points) Use indexing to create a new vector consisting of only the last 8 elements of `nouns`.
+
+```{r}
+# Solution for 2C:
+newNouns2 <- nouns[c(3:10)]
+print(newNouns2)
+
+```
+
+(d) (5 points) Use indexing to create a new vector of the 1st, 3rd through 6th, and 10th elements of `nouns` (the length of the resulting vector should be 6).
+
+```{r}
+# Solution for 2D:
+newNouns3 <- nouns[c(1,3:6,10)]
+print(newNouns3)
+
+```
+
+
+# Problem 3 (30 Points)
+
+(a) (5 points) Create a vector `my_breakfast` of everything you ate for breakfast.
+
+```{r}
+# Solution for 3A:
+my_breakfast <- c("Water", "Cereal")
+
+```
+
+(b) (5 points) Create a vector `my_lunch` of everything you ate (or will eat) for lunch.
+
+```{r}
+# Solution for 3B:
+my_lunch <- c("Water", "Chicken")
+
+```
+
+(c) (5 points) Create a list `meals` that contains your breakfast and lunch.
+
+```{r}
+# Solution for 3C:
+meals <- list(
+  Lunch = my_lunch,
+  Breakfast = my_breakfast
+)
+print(meals)
+```
+
+(d) (5 points) Add a "dinner" element to your `meals` list that has what you plan to eat for dinner.
+
+```{r}
+# Solution for 3D:
+meals$Dinner <- list(
+  Dinner = "Chicken"
+)
+print(meals)
+
+```
+
+(e) (5 points) Use dollar notation to extract your `dinner` element from your list and save it in a vector called 'dinner'.
+
+```{r}
+# Solution for 3E:
+dinner <- c(meals$Dinner)
+
+
+```
+
+(f) (5 points) Use double-bracket notation to extract your `lunch` element from your list and save it in your list as the element at index 5 (no reason beyond practice).
+
+```{r}
+# Solution for 3F:
+
+meals[[5]] <- meals[[1]]
+
+
+```
+
+
+# Problem 4 (30 Points)
+
+(a) (5 points) Create a vector of the number of points the Chicago Bulls (NBA team) scored in the most recent 4 games of the season (Google "Chicago Bulls" for the scores!)
+
+```{r}
+# Solution for 4A:
+points <- c(93,98,67,95)
+
+```
+
+(b) (5 points) Create a vector of the number of points the Bulls have allowed to be scored against them in each of the first 4 games of the season.
+
+```{r}
+# Solution for 4B:
+points_allowed <- c(67,68,87,65)
+
+```
+
+(c) (5 points) Combine your two vectors into a dataframe called `games`.
+
+```{r}
+# Solution for 4C:
+games <- data.frame(points, points_allowed)
+
+```
+
+(d) (5 points) Create a new column "diff" that is the difference in points between the teams. Hint: recall the syntax for assigning new elements (which in this case will be a vector) to a list!
+
+```{r}
+# Solution for 4D:
+games[["diff"]] <- games$points - games$points_allowed
+
+```
+
+(e) (5 points) Create a new column "won" which is `TRUE` if the Bulls won the game.
+
+```{r}
+# Solution for 4E:
+games$won <- games$points > games$points_allowed
+
+```
+
+(f) (5 points) Create a vector of the opponent names corresponding to the games played and add it to your dataframe.
+
+```{r}
+# Solution for 4F:
+opponents <- c("Magic", "Heat", "Lakers", "Wolves")
+games$opponents <- data.frame(opponents)
+
+```
+
